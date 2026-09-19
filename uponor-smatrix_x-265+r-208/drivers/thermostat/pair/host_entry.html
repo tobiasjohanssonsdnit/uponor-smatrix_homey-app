@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body { font-family: sans-serif; padding: 1em; }
+    input { width: 100%; box-sizing: border-box; padding: 0.5em; margin: 0.5em 0 1em; }
+  </style>
+</head>
+<body>
+  <p>Enter the local IP address of your Uponor Smatrix (R-208) gateway.</p>
+  <input type="text" id="host" placeholder="192.168.1.x" />
+  <button id="next" class="homey-button-primary-full">Next</button>
+
+  <script>
+    const input = document.getElementById('host');
+    const button = document.getElementById('next');
+
+    button.addEventListener('click', async () => {
+      const host = input.value.trim();
+      if (!host) {
+        Homey.alert('Enter an IP address');
+        return;
+      }
+      try {
+        Homey.showLoadingOverlay();
+        await Homey.emit('set_host', host);
+        Homey.showView('list_devices');
+      } catch (err) {
+        Homey.hideLoadingOverlay();
+        Homey.alert(err.message || String(err));
+      }
+    });
+  </script>
+</body>
+</html>

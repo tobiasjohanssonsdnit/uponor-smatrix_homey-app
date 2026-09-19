@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
+    <script type="text/javascript">
+      function onHomeyReady(Homey) {
+        Homey.ready();
+
+        var DEFAULT_POLL_INTERVAL = 60;
+        var input = document.getElementById('poll_interval');
+        var save = document.getElementById('save');
+
+        Homey.get('poll_interval', function (err, value) {
+          if (err) return Homey.alert(err);
+          input.value = value || DEFAULT_POLL_INTERVAL;
+        });
+
+        save.addEventListener('click', function () {
+          var value = Math.max(10, Math.min(3600, parseInt(input.value, 10) || DEFAULT_POLL_INTERVAL));
+          input.value = value;
+          Homey.set('poll_interval', value, function (err) {
+            if (err) return Homey.alert(err);
+            Homey.alert('Saved');
+          });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <fieldset class="homey-form-fieldset">
+      <legend class="homey-form-legend">Uponor Smatrix</legend>
+
+      <div class="homey-form-group">
+        <label class="homey-form-label" for="poll_interval">Poll interval (seconds)</label>
+        <input class="homey-form-input" id="poll_interval" type="number" min="10" max="3600" step="1" />
+      </div>
+
+      <button id="save" class="homey-button homey-button-primary">Save</button>
+    </fieldset>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "id": "com.tobiasfagerskog.uponor",
+  "version": "0.1.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Uponor Smatrix"
+  },
+  "description": {
+    "en": "Room temperature and humidity sensors from a local Uponor Smatrix Pulse (X-265 + R-208) gateway."
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [],
+  "brandColor": "#2E6DA4",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Tobias Fagerskog"
+  }
+}
