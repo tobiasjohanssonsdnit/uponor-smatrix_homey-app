@@ -1,6 +1,6 @@
 {
-  "id": "com.tobiasfagerskog.uponorpy",
-  "version": "0.1.0",
+  "id": "com.tobiasfagerskog.uponor-smatrix_local",
+  "version": "1.0.0",
   "compatibility": ">=13.0.0",
   "sdk": 3,
   "runtime": "python",
@@ -8,9 +8,12 @@
   "platforms": ["local"],
   "name": { "en": "Uponor Smatrix Local" },
   "description": {
-    "en": "Room temperature and humidity sensors from a local Uponor Smatrix Pulse (X-265 + R-208) gateway."
+    "en": "Every room of your floor heating, right in Homey."
   },
   "category": ["climate"],
+  "tags": {
+    "en": ["uponor", "smatrix", "pulse", "floor heating", "thermostat", "temperature", "humidity"]
+  },
   "permissions": [],
   "brandColor": "#2E6DA4",
   "images": {
@@ -20,5 +23,9 @@
   },
   "author": {
     "name": "Tobias Fagerskog"
+  },
+  "source": "https://github.com/tobiasjohanssonsdnit/uponor-smatrix_homey-app",
+  "bugs": {
+    "url": "https://github.com/tobiasjohanssonsdnit/uponor-smatrix_homey-app/issues"
   }
 }
