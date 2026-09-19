@@ -1,5 +1,5 @@
-*/.homeybuild/
-*/env.json
+/.homeybuild/
+/env.json
 __pycache__/
 node_modules/
 .DS_Store

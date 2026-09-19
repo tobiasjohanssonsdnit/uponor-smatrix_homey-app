@@ -1,0 +1,38 @@
+{
+  "id": "thermostat",
+  "name": {
+    "en": "Room Thermostat"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "images": {
+    "small": "/drivers/thermostat/assets/images/small.png",
+    "large": "/drivers/thermostat/assets/images/large.png",
+    "xlarge": "/drivers/thermostat/assets/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "host_entry"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "icon": "/drivers/thermostat/assets/icon.svg"
+}

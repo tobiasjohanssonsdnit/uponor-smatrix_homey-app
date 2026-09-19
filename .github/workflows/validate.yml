@@ -1,0 +1,23 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate Homey app
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # Pinned to master: the v1 tag still runs `npm ci`, which fails for a Python app.
+      - name: Validate (verified level)
+        uses: athombv/github-action-homey-app-validate@0f3b42c15d26aab79d7c48cde4d2805524da910e
+        with:
+          level: verified

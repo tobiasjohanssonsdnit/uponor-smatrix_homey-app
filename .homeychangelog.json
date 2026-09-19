@@ -1,0 +1,5 @@
+{
+  "0.1.0": {
+    "en": "First release: room temperature and humidity from a local Uponor Smatrix Pulse gateway. Read only, set the pull interval for all devices in the app settings"
+  }
+}

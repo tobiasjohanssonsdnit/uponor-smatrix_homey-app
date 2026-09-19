@@ -1,0 +1,52 @@
+name: Publish
+
+# Uploads a build to the Homey developer dashboard. Releasing it to Test or
+# submitting it for certification is still done by hand in the dashboard.
+#
+# Athom's publish action runs `npm ci`, which fails for a Python app, so this
+# runs the same `homey app publish` command directly.
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        description: Git ref to publish
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Publish to Homey
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.ref || github.ref }}
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+
+      - name: Validate (verified level)
+        run: npx --yes homey app validate --level verified
+
+      - name: Publish
+        env:
+          HOMEY_HEADLESS: '1'
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ -z "$HOMEY_PAT" ]; then
+            echo "::error::Add the HOMEY_PAT repository secret (token from https://tools.developer.homey.app/me)."
+            exit 1
+          fi
+          npx --yes homey app publish
+
+      - name: Summary
+        run: |
+          echo "Build uploaded. Release it or submit it for certification at https://tools.developer.homey.app/apps/app/$(jq -r .id app.json)" >> "$GITHUB_STEP_SUMMARY"

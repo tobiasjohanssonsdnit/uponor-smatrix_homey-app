@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="960" viewBox="0 0 960 960">
+  <g fill="none" stroke="#000" stroke-width="40" stroke-linecap="round" stroke-linejoin="round">
+    <!-- floor heating loop -->
+    <path d="M120 820 H840 M160 820 V700 Q160 640 220 640 H740 Q800 640 800 580 Q800 520 740 520 H220 Q160 520 160 460 Q160 400 220 400 H740 Q800 400 800 340 Q800 280 740 280 H220 Q160 280 160 220 Q160 160 220 160 H800"/>
+  </g>
+</svg>

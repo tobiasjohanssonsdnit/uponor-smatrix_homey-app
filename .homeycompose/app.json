@@ -1,0 +1,32 @@
+{
+  "id": "com.tobiasfagerskog.uponor-smatrix_x-265",
+  "version": "0.1.0",
+  "compatibility": ">=13.0.0",
+  "sdk": 3,
+  "runtime": "python",
+  "pythonVersion": "3.14",
+  "platforms": ["local"],
+  "name": { "en": "Uponor Smatrix X-265" },
+  "description": {
+    "en": "Every room of your floor heating, right in Homey."
+  },
+  "category": ["climate"],
+  "tags": {
+    "en": ["uponor", "smatrix", "pulse", "x-265", "r-208", "floor heating", "thermostat", "temperature", "humidity"]
+  },
+  "permissions": [],
+  "brandColor": "#2E6DA4",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Tobias Fagerskog"
+  },
+  "source": "https://github.com/tobiasjohanssonsdnit/uponor-smatrix_homey-app",
+  "support": "https://github.com/tobiasjohanssonsdnit/uponor-smatrix_homey-app/issues",
+  "bugs": {
+    "url": "https://github.com/tobiasjohanssonsdnit/uponor-smatrix_homey-app/issues"
+  }
+}
