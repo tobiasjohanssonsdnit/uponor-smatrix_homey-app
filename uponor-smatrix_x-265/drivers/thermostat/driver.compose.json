@@ -7,6 +7,9 @@
   "capabilities": [
     "measure_temperature"
   ],
+  "platforms": [
+    "local"
+  ],
   "connectivity": [
     "lan"
   ],

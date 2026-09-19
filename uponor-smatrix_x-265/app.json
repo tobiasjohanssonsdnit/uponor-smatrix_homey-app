@@ -42,6 +42,7 @@
     "name": "Tobias Fagerskog"
   },
   "source": "https://github.com/tobiasjohanssonsdnit/uponor-smatrix_homey-app",
+  "support": "https://github.com/tobiasjohanssonsdnit/uponor-smatrix_homey-app/issues",
   "bugs": {
     "url": "https://github.com/tobiasjohanssonsdnit/uponor-smatrix_homey-app/issues"
   },
@@ -54,6 +55,9 @@
       "class": "sensor",
       "capabilities": [
         "measure_temperature"
+      ],
+      "platforms": [
+        "local"
       ],
       "connectivity": [
         "lan"
