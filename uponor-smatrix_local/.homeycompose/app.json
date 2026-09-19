@@ -6,7 +6,7 @@
   "runtime": "python",
   "pythonVersion": "3.14",
   "platforms": ["local"],
-  "name": { "en": "Uponor Smatrix (Python)" },
+  "name": { "en": "Uponor Smatrix Local" },
   "description": {
     "en": "Room temperature and humidity sensors from a local Uponor Smatrix Pulse (X-265 + R-208) gateway."
   },
