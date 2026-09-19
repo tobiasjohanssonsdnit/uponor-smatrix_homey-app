@@ -1,4 +1,4 @@
-# Uponor Smatrix Local for Homey
+# Uponor Smatrix X-265 for Homey
 
 A Homey app that adds each room of an Uponor Smatrix Pulse floor heating system as a sensor in Homey. Each room shows its temperature, plus humidity if its thermostat has a humidity sensor.
 
@@ -17,13 +17,14 @@ It reads data from the Uponor **R-208** communication module over your local net
 ## Requirements
 
 - An Uponor Smatrix Pulse system (X-265 wireless or X-245 wired controller) with an R-208 communication module on the same network as your Homey.
+  The app has only been tested with an X-265 controller and an R-208 module. It should work with the X-245, but that is untested.
 - The R-208's IP address. You can find it in your router's list of connected devices; it identifies itself as `UPONOR.PULSE.<id>`. Give it a fixed IP address (a DHCP reservation in your router), because the app stores the address when you add the rooms.
 - To build it yourself: the Homey CLI (`npm install -g homey`).
 - To build it yourself: **Docker running** on the machine you develop on. The CLI builds and runs Python apps in Athom's Docker images (`ghcr.io/athombv/python-homey-app-runner`).
 
 ## Install and run
 
-Install **Uponor Smatrix Local** from the Homey App Store, or build it from source:
+Install **Uponor Smatrix X-265** from the Homey App Store, or build it from source:
 
 ```sh
 cd uponor-smatrix_local
@@ -33,11 +34,11 @@ homey app install   # or install it permanently
 
 ## Adding rooms
 
-1. In the Homey app, go to **Devices → + → Uponor Smatrix Local → Room Thermostat**.
+1. In the Homey app, go to **Devices → + → Uponor Smatrix X-265 → Room Thermostat**.
 2. Enter the R-208's IP address. The app contacts the gateway right away, so a wrong address fails at this step.
 3. Pick the rooms you want to add. Each one becomes its own sensor.
 
-To change the poll interval, open **Settings → Apps → Uponor Smatrix Local → Configure app**.
+To change the poll interval, open **Settings → Apps → Uponor Smatrix X-265 → Configure app**.
 
 ## How it works
 

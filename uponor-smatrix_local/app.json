@@ -10,7 +10,7 @@
     "local"
   ],
   "name": {
-    "en": "Uponor Smatrix Local"
+    "en": "Uponor Smatrix X-265"
   },
   "description": {
     "en": "Every room of your floor heating, right in Homey."
@@ -23,6 +23,8 @@
       "uponor",
       "smatrix",
       "pulse",
+      "x-265",
+      "r-208",
       "floor heating",
       "thermostat",
       "temperature",

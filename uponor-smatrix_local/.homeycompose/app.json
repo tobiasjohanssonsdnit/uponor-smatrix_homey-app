@@ -6,13 +6,13 @@
   "runtime": "python",
   "pythonVersion": "3.14",
   "platforms": ["local"],
-  "name": { "en": "Uponor Smatrix Local" },
+  "name": { "en": "Uponor Smatrix X-265" },
   "description": {
     "en": "Every room of your floor heating, right in Homey."
   },
   "category": ["climate"],
   "tags": {
-    "en": ["uponor", "smatrix", "pulse", "floor heating", "thermostat", "temperature", "humidity"]
+    "en": ["uponor", "smatrix", "pulse", "x-265", "r-208", "floor heating", "thermostat", "temperature", "humidity"]
   },
   "permissions": [],
   "brandColor": "#2E6DA4",
