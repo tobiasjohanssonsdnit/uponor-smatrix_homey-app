@@ -27,7 +27,6 @@ It reads data from the Uponor **R-208** communication module over your local net
 Install **Uponor Smatrix X-265** from the Homey App Store, or build it from source:
 
 ```sh
-cd uponor-smatrix_x-265
 homey app run       # run in development mode, with logs in the terminal
 homey app install   # or install it permanently
 ```
@@ -68,6 +67,8 @@ drivers/thermostat/
   device.py                     polling and updating capabilities
   pair/host_entry.html          pairing screen for the IP address
 settings/index.html             app settings page (poll interval)
+.homeyignore                    repo-only files left out of the app package
+.github/workflows/              CI: validate, version bump, publish
 ```
 
 ## Development notes
@@ -82,4 +83,14 @@ settings/index.html             app settings page (poll interval)
 
 ## License
 
-MIT. See [LICENSE](../LICENSE).
+MIT. See [LICENSE](LICENSE).
+
+## Continuous integration
+
+GitHub Actions in `.github/workflows/`:
+
+- **Validate** runs Athom's validate action at the `verified` level on every push and pull request.
+- **Update version** (run by hand) bumps the version with Athom's version action, adds the changelog entry, then commits, tags and creates a GitHub release.
+- **Publish** (run by hand, or when a GitHub release is published) uploads the build to the Homey developer dashboard. It needs a `HOMEY_PAT` repository secret, the personal access token from https://tools.developer.homey.app/me. Athom's publish action can't be used because it runs `npm ci`, which fails for a Python app, so the workflow runs the same `homey app publish` command directly.
+
+Publishing only uploads a draft build. Releasing it to Test or submitting it for certification is still done in the developer dashboard.

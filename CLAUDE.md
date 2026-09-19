@@ -1,10 +1,10 @@
 # CLAUDE.md
 
-A Homey Pro app, **Uponor Smatrix X-265** (`com.tobiasfagerskog.uponor-smatrix_x-265`), written in Python (SDK 3, `runtime: python`). It reads room temperature and humidity from an Uponor Smatrix Pulse R-208 gateway over its local JNAP HTTP interface. The app lives in `uponor-smatrix_x-265/`. Its `README.md` describes the protocol, the project layout and the development notes, so read it before changing code.
+A Homey Pro app, **Uponor Smatrix X-265** (`com.tobiasfagerskog.uponor-smatrix_x-265`), written in Python (SDK 3, `runtime: python`). It reads room temperature and humidity from an Uponor Smatrix Pulse R-208 gateway over its local JNAP HTTP interface. The app is at the repo root. `README.md` describes the protocol, the project layout and the development notes, so read it before changing code.
 
 ## Commands
 
-Run these from `uponor-smatrix_x-265/`. Docker must be running, because the CLI builds Python apps in Athom's images.
+Run these from the repo root. Docker must be running, because the CLI builds Python apps in Athom's images.
 
 ```sh
 homey app run                        # dev mode on the Homey, logs in the terminal
@@ -29,7 +29,8 @@ There are no automated tests. Check changes with `homey app validate --level ver
 1. Bump `version` in `.homeycompose/app.json` (semver; the first release is 0.1.0).
 2. Add a matching entry to `.homeychangelog.json` with a short, user-facing English line.
 3. Run `homey app validate --level verified`.
-4. The user runs `homey app publish` and submits the build in the Homey developer dashboard.
+4. Or use the **Update version** workflow, which does steps 1–2 and tags a release.
+5. The **Publish** workflow (or the user running `homey app publish`) uploads the build. The user then releases it or submits it in the Homey developer dashboard.
 
 ## App Store guidelines to keep
 
@@ -44,6 +45,10 @@ There are no automated tests. Check changes with `homey app validate --level ver
 ## Hardware scope
 
 The app has only been tested with an X-265 controller and an R-208 module. Rooms are `C<controller>_T<thermostat>` variables in the JNAP reply. Temperatures come in tenths of °F and are converted in `lib/uponor.py`.
+
+## CI
+
+`.github/workflows/` holds three workflows: validate on push and PR, a manual version bump, and publish. Athom's actions always run at the repo root, which is why the app lives there. Don't move it back into a subfolder. Keep repo-only files out of the app package by listing them in `.homeyignore`.
 
 ## Git
 
