@@ -4,7 +4,7 @@ A Homey app that adds each room of an Uponor Smatrix Pulse floor heating system 
 
 It reads data from the Uponor **R-208** communication module over your local network. It does not use the Uponor cloud and needs no login.
 
-- App id: `com.tobiasfagerskog.uponor-smatrix_local`
+- App id: `com.tobiasfagerskog.uponor-smatrix_x-265`
 - Runtime: Python 3.14, Homey Pro 2023 or newer on firmware 13.0.0 or later
 
 ## What you get
@@ -27,7 +27,7 @@ It reads data from the Uponor **R-208** communication module over your local net
 Install **Uponor Smatrix X-265** from the Homey App Store, or build it from source:
 
 ```sh
-cd uponor-smatrix_local
+cd uponor-smatrix_x-265
 homey app run       # run in development mode, with logs in the terminal
 homey app install   # or install it permanently
 ```
