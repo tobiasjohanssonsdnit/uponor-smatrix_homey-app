@@ -1,6 +1,6 @@
 {
   "id": "com.tobiasfagerskog.uponor-smatrix_x-265",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "compatibility": ">=13.0.0",
   "sdk": 3,
   "runtime": "python",
